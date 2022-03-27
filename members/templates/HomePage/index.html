@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Home page
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <h1>Home page</h1>
+      </div>
+    </div>
+</div>
+{% endblock %}

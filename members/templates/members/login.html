@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+Авторизация
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-sm-4">
+          {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+          {% endif %}
+        <h1>Login</h1>
+            <form action="" method=POST>
+                {% csrf_token %}
+
+        <div class="mb-3">
+               <label for="exampleInputEmail"
+               class="form-label">Username</label>
+               <input type="text" class="
+                form-control" name="username"
+                aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+               <label for="exampleInputEmail"
+               class="form-label">Password</label>
+               <input type="password" class="
+                form-control" name="password"
+        </div>
+        <p></p>
+        <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
